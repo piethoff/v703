@@ -1,7 +1,5 @@
 ##
 #spannung/V counts  Stromstaerke/microA
-300 0 0.1
-310 0 0.2
 320 13914 0.2
 330 14186 0.3
 340 14550 0.3

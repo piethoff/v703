@@ -1,21 +1,44 @@
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import numpy as np
+from scipy.optimize import curve_fit
+from uncertainties import unumpy
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+#plot1
+mpl.use('pgf')
+mpl.rcParams.update({
+    'pgf.preamble': r'\usepackage{siunitx}',
+})
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+data = np.genfromtxt('content/messwerte.txt', unpack=True)
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
+x = data[0]
+y = data[1]/60
+y_err = np.sqrt(data[1] )/60
 
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+plt.xlabel(r'$U/\si{\volt}$')
+plt.ylabel(r'Aktivität$/\si{\becquerel}$')
+
+plt.grid(True, which='both')
+
+
+# Fitvorschrift
+def f(x, A, B):
+    return A*x+B      #jeweilige Fitfunktion auswaehlen:
+
+params, covar = curve_fit(f, x, y)            #eigene Messwerte hier uebergeben
+uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
+for i in range(0, len(uparams)):
+    print(chr(ord('A') + i), "=" , uparams[i])
+print()
+
+lin = np.linspace(x[0], x[-1], 1000)
+plt.plot(lin, f(lin, *params), "xkcd:orange", label=r'Regression' )
+plt.plot(x, y, ".", color="xkcd:blue", label="Messwerte")
+plt.errorbar(x, y, yerr=y_err, elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Ungenauigkeit")
+
+
+plt.tight_layout()
+plt.legend()
+plt.savefig('build/messung1.pdf')
+plt.clf()

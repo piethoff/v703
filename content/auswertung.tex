@@ -1,9 +1,74 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
-\begin{figure}
+\subsection{Bestimmung der Charakterristik des Geiger-Müller-Zählrohrs}
+Die durch die Messung erhaltenen Messwerte sind in der Tabelle\ref{tab:mess} aufgetragen.
+\begin{table}
+    \centering
+    \caption{Spannung,Aktivität des $\beta$-Strahlers und Zählerstrom.}
+    \label{tab:mess}
+    \begin{tabular}{S[table-format=3.0] S[table-format=5.0] S[table-format=1.2(0)e0]}
+        \toprule
+        {$U/\si{\volt}$} & {$Counts$} & {$I/\si{\micro\ampere}$}  \\
+        \midrule
+        320 & 13914 & 0.2 \\
+        330 & 14186 & 0.3 \\
+        340 & 14550 & 0.3 \\
+        350 & 14414 & 0.4 \\
+        360 & 14448 & 0.4 \\
+        370 & 14703 & 0.5 \\
+        380 & 14753 & 0.5 \\
+        390 & 14587 & 0.6 \\
+        400 & 14662 & 0.6 \\
+        410 & 14819 & 0.7 \\
+        420 & 14822 & 0.7 \\
+        430 & 14820 & 0.8 \\
+        440 & 15033 & 0.9 \\
+        450 & 14903 & 0.95 \\
+        460 & 15125 & 1.0 \\
+        470 & 15013 & 1.0 \\
+        480 & 15076 & 1.1 \\
+        490 & 14963 & 1.1 \\
+        500 & 14790 & 1.2 \\
+        510 & 15127 & 1.2 \\
+        520 & 15237 & 1.3 \\
+        530 & 15098 & 1.4 \\
+        540 & 15076 & 1.4 \\
+        550 & 15163 & 1.45 \\
+        560 & 14876 & 1.5 \\
+        570 & 15207 & 1.6 \\
+        580 & 15064 & 1.6 \\
+        590 & 15124 & 1.7 \\
+        600 & 15097 & 1.7 \\
+        610 & 15080 & 1.8 \\
+        620 & 15113 & 1.8 \\
+        630 & 15356 & 1.9 \\
+        640 & 15473 & 2.0 \\
+        650 & 15406 & 2.0 \\
+        660 & 15472 & 2.1 \\
+        670 & 15856 & 2.1 \\
+        680 & 16136 & 2.2 \\
+        690 & 16534 & 2.3 \\
+        700 & 17078 & 2.4 \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+\noindent Die Aufgenommenen Zählraten sind Poissonverteilt, daher ergibt sich ihre Unsicherheit nach Gauß wie folgt:
+\begin{equation}
+  \sigma = \sqrt(N)
+\end{equation}
+Die Messwerte sind in Abbildung\ref{fig:plot} aufgetragen und es wurde eine lineare Ausgleichsgerade durch diese gezogen.
+\begin{figure}[H]
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
+  \includegraphics{build/messung1.pdf}
+  \caption{Charakerristik des Zählrohrs.}
   \label{fig:plot}
 \end{figure}
+\noindent  Die Ausgleichsgerade wurde mit Python/SciPy mit der Funktion $f(x)= Ax + B$ erstellt.
+Damit erfolgt eine Steigung von
+\begin{equation}
+  A = \SI{0.071 \pm 0.008}{\becquerel\per\volt}
+\end{equation}
+und ein $y$-Achsenabchnitt von
+\begin{equation}
+  B =   \SI[per-mode=reciprocal]{215\pm 4}{\volt}        .
+\end{equation}
