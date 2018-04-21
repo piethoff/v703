@@ -12,9 +12,12 @@ mpl.rcParams.update({
 
 data = np.genfromtxt('content/messwerte.txt', unpack=True)
 
+x_0 = data[0]
 x = data[0]
+
 y = data[1]/60
 y_err = np.sqrt(data[1] )/60
+
 
 plt.xlabel(r'$U/\si{\volt}$')
 plt.ylabel(r'Aktivität$/\si{\becquerel}$')
@@ -34,7 +37,7 @@ print()
 
 lin = np.linspace(x[0], x[-1], 1000)
 plt.plot(lin, f(lin, *params), "xkcd:orange", label=r'Regression' )
-plt.plot(x, y, ".", color="xkcd:blue", label="Messwerte")
+plt.plot(x_0, y, ".", color="xkcd:blue", label="Messwerte")
 plt.errorbar(x, y, yerr=y_err, elinewidth=0.7, capthick=0.7, capsize=3, fmt=".", color="xkcd:blue", label="Ungenauigkeit")
 
 
