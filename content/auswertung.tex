@@ -1,14 +1,14 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{Bestimmung der Charakterristik des Geiger-Müller-Zählrohrs}
+\subsection{Bestimmung der Charakteristik des Geiger-Müller-Zählrohrs}
 Die durch die Messung erhaltenen Messwerte sind in der Tabelle\ref{tab:mess} aufgetragen.
 \begin{table}
     \centering
-    \caption{Spannung,Aktivität des $\beta$-Strahlers und Zählerstrom.}
+    \caption{Spannung, Aktivität des $\beta$-Strahlers und Zählerstrom.}
     \label{tab:mess}
     \begin{tabular}{S[table-format=3.0] S[table-format=5.0] S[table-format=1.2(0)e0]}
         \toprule
-        {$U/\si{\volt}$} & {$Counts$} & {$I/\si{\micro\ampere}$}  \\
+        {$U/\si{\volt}$} & {Counts} & {$I/\si{\micro\ampere}$}  \\
         \midrule
         320 & 13914 & 0.2 \\
         330 & 14186 & 0.3 \\
@@ -52,15 +52,15 @@ Die durch die Messung erhaltenen Messwerte sind in der Tabelle\ref{tab:mess} auf
         \bottomrule
     \end{tabular}
 \end{table}
-\noindent Die Aufgenommenen Zählraten sind Poissonverteilt, daher ergibt sich ihre Unsicherheit nach Gauß wie folgt:
+\noindent Die Aufgenommenen Zählraten sind Poissonverteilt, daher ergibt sich ihre Unsicherheit wie folgt:
 \begin{equation}
-  \sigma = \sqrt(N)
+  \sigma = \sqrt{N}
 \end{equation}
 Die Messwerte sind in Abbildung\ref{fig:plot} aufgetragen und es wurde eine lineare Ausgleichsgerade durch diese gezogen.
 \begin{figure}[H]
   \centering
   \includegraphics{build/messung1.pdf}
-  \caption{Charakerristik des Zählrohrs.}
+  \caption{Charakeristik des Zählrohrs.}
   \label{fig:plot}
 \end{figure}
 \noindent  Die Ausgleichsgerade wurde mit Python/SciPy mit der Funktion $f(x)= Ax + B$ erstellt.
@@ -75,7 +75,7 @@ und ein $y$-Achsenabchnitt von
 \subsection{Oszillographische Messung der Totzeit}
 Mit der beschriebenen Messung konnte eine Totzeit von ungefähr
 \begin{equation*}
-  t_\text{tot} = \SI{70}{\micro\second}
+  t_\text{tot} = \SI{70}{\micro \second}
 \end{equation*}
 und eine Erholungszeit von ungefähr
 \begin{equation*}
@@ -88,14 +88,14 @@ Die erhaltenen Messwerte sind in Tabelle\ref{tab:2strahl} aufgetragen.
   \caption{Gemessene Werte für die Zwei-Quellen-Methode.}
   \label{tab:2strahl}
   \centering
-  sisetup{table-format=5.3(4)}
-  \begin{tabular}{cSS}
+  \sisetup{table-format=5.3(4)}
+  \begin{tabular}{c S[table-format=5.0(0)] S}
     \toprule
-    {$Quelle$} & {$Counts$} & {$Aktivität/\si{\becquerel}$}\\
+    {Quelle} & {Counts} & {Aktivität$/\si{\becquerel}$}\\
     \midrule
-    {$N_1$} & 14440 & 240.667\pm2.003 \\
+    {$N_1$}     & 14440 & 240.667\pm2.003  \\
     {$N_{1+2}$} & 14987 & 249.783\pm2.040  \\
-    {$N_2$} & 614 & 10.233\pm0.413  \\
+    {$N_2$}     & 614   & 10.233 \pm0.413  \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -104,7 +104,61 @@ Damit lässt sich die Totzeit mit Gleichung auf
   T=
 \end{equation*}
 abschätzen.
-Der Fehlerberechnet sich hier nach Gauß mit:
+Der Fehler berechnet sich hier nach Gauß mit:
 \begin{equation}
-  \Delta T =
+  \symup{\Delta} T =
 \end{equation}
+%
+\subsection{Bestimmung der mittleren Ladung pro Event}
+Die Ladung wird gemäß Formel \eqref{eqn:ladung} berechnet und ist gegen die entsprechende Spannung in 
+Tabelle \ref{tab:ladung} aufgetragen.
+\begin{table}
+    \centering
+    \caption{Spannung und Landung pro Event.}
+    \label{tab:ladung}
+    \begin{tabular}{S[table-format=3.0] S[table-format=2.2e2]}
+        \toprule
+        {$U/\si{\volt}$} & {$\symup{\Delta}q/e$}  \\
+        \midrule
+320 &    5.38e12\\
+330 &    7.92e12\\
+340 &    7.72e12\\
+350 &    10.39e12\\
+360 &    10.37e12\\
+370 &    12.74e12\\
+380 &    12.69e12\\
+390 &    15.41e12\\
+400 &    15.33e12\\
+410 &    17.69e12\\
+420 &    17.69e12\\
+430 &    20.22e12\\
+440 &    22.42e12\\
+450 &    23.87e12\\
+460 &    24.76e12\\
+470 &    24.95e12\\
+480 &    27.33e12\\
+490 &    27.53e12\\
+500 &    30.39e12\\
+510 &    29.71e12\\
+520 &    31.95e12\\
+530 &    34.73e12\\
+540 &    34.78e12\\
+550 &    35.82e12\\
+560 &    37.77e12\\
+570 &    39.41e12\\
+580 &    39.78e12\\
+590 &    42.10e12\\
+600 &    42.17e12\\
+610 &    44.71e12\\
+620 &    44.61e12\\
+630 &    46.34e12\\
+640 &    48.41e12\\
+650 &    48.62e12\\
+660 &    50.83e12\\
+670 &    49.60e12\\
+680 &    51.06e12\\
+690 &    52.10e12\\
+700 &    52.63e12\\
+        \bottomrule
+    \end{tabular}
+\end{table}

@@ -1,14 +1,16 @@
-import matplotlib.pyplot as plt
 import matplotlib as mpl
+
+mpl.use('pgf')
+mpl.rcParams.update({
+    'pgf.preamble': r'\usepackage{siunitx}',
+})
+
+import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from uncertainties import unumpy
 
 #plot1
-mpl.use('pgf')
-mpl.rcParams.update({
-    'pgf.preamble': r'\usepackage{siunitx}',
-})
 
 data = np.genfromtxt('content/messwerte.txt', unpack=True)
 
@@ -45,3 +47,15 @@ plt.tight_layout()
 plt.legend()
 plt.savefig('build/messung1.pdf')
 plt.clf()
+
+
+
+data = np.genfromtxt("content/messwerte.txt", unpack=True)
+t = 60
+e = 1.602e-19
+data[2] /= 1000
+data[1] = data[2]*t/(data[1]*e)
+data[1] /= 10e11
+
+for i in range(data[0].size):
+    print("%3d &\t %2.2fe12" % (data[0][i], data[1][i]), sep = " &\t", end = "\\\\\n")
