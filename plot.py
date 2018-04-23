@@ -32,6 +32,7 @@ def f(x, A, B):
     return A*x+B      #jeweilige Fitfunktion auswaehlen:
 
 params, covar = curve_fit(f, x, y)            #eigene Messwerte hier uebergeben
+#params, covar = curve_fit(f, x[4:-4], y[4:-4])            #eigene Messwerte hier uebergeben
 uparams = unumpy.uarray(params, np.sqrt(np.diag(covar)))
 for i in range(0, len(uparams)):
     print(chr(ord('A') + i), "=" , uparams[i])
