@@ -1,11 +1,11 @@
 \section{Theorie}
 \label{sec:Theorie}
-Das Geiger-Müller-Zählrohr ist eines der wichtigsten Messgeräte für ionisierende Strahlung, 
+Das Geiger-Müller-Zählrohr ist eines der wichtigsten Messgeräte für ionisierende Strahlung,
 insbesondere $\alpha$- und $\beta$-Strahlung, welche zu fast \SI{100}{\percent} detektiert wird.
-$\gamma$-Strahlung wird nur zu etwa \SI{1}{\percent} aufgenommen, 
+$\gamma$-Strahlung wird nur zu etwa \SI{1}{\percent} aufgenommen,
 sodass nur hohe Intensitäten mit diesem Versuchsaufbau gemessen werden sollten.
 
-Für jedes in seinem Inneren absorbierten Teilchen erzeugt es einen elektronischen Impuls, 
+Für jedes in seinem Inneren absorbierten Teilchen erzeugt es einen elektronischen Impuls,
 der anschließend durch einen Impulszähler aufgenommen wird.
 Somit kann die Intensität der Strahlung bestimmt werden.
 
@@ -18,31 +18,31 @@ Zwischen den Elektroden wird eine Spannung in der Größenordnung $\num{100}$ bi
 \subsection{Funktion}
 Wenn nun eines der Gasmoleküle innerhalb des Zählrohrs ionisiert wird, wird das ausgelöste Elektron Richtung Anode und das ionisierte Molekül
 Richtung Kathode beschleunigt. Dabei wird das Elektron so stark beschleunigt, dass es wiederum weitere Moleküle ionisieren kann.
-Es kommt außerdem durch Stoßprozesse zur Erzeugung von UV-Strahlung, sodass sich die Kettenreaktion der Ladungsauslösung 
+Es kommt außerdem durch Stoßprozesse zur Erzeugung von UV-Strahlung, sodass sich die Kettenreaktion der Ladungsauslösung
 auch senkrecht zum E-Feld, und somit durch das gesamte Zählrohr, ausbreiten kann.
 
-Dies hat den Vorteil, dass dadurch so große Impulse entstehen, dass sie nicht besonders stark verstärkt werden müssen und die 
-Messung vergleichsweise einfach ist. Ein Nachteil ist jedoch, dass die Messung keine Information 
+Dies hat den Vorteil, dass dadurch so große Impulse entstehen, dass sie nicht besonders stark verstärkt werden müssen und die
+Messung vergleichsweise einfach ist. Ein Nachteil ist jedoch, dass die Messung keine Information
 über die Energie der Strahlung hergibt. Somit kann auch nicht mehr zwischen $\alpha$- und $\beta$-Strahlung unterschieden werden.
 
-Im Gegensatzt zu den leichten Elektronen benötigen die Ionen wesentlich länger, um die Kathode zu erreichen. 
-Das bewirkt unter Anderem, dass die Entladungslawinen nicht unbegrenz lange stattfinden, da die effektive Feldstärke 
+Im Gegensatzt zu den leichten Elektronen benötigen die Ionen wesentlich länger, um die Kathode zu erreichen.
+Das bewirkt unter Anderem, dass die Entladungslawinen nicht unbegrenz lange stattfinden, da die effektive Feldstärke
 im Zählrohr abnimmt.
 In diesem Zustand sind keine weiteren Ionisationen durch eingehende Strahlung mehr möglich.
 Die Zeit, in der nach einem registrierten Event keine neuen Events aufgenommen werden können, nennt man Totzeit.
 Nach der Totzeit folgt ein Bereich, die Erholungszeit, in dem die erzeugten Impulse schwächer sind als zuvor.
 
-Um zu verhindern, dass die Ionen, welche ja auch durch das Feld beschleunigt werden, weitere Elektronen ausschlagen, 
-wenn sie die Kathode erreichen, werden dem Gas komplexere Moleküle zugefügt. Diese geben eines ihrer ELektronen an die Ionen ab 
+Um zu verhindern, dass die Ionen, welche ja auch durch das Feld beschleunigt werden, weitere Elektronen ausschlagen,
+wenn sie die Kathode erreichen, werden dem Gas komplexere Moleküle zugefügt. Diese geben eines ihrer ELektronen an die Ionen ab
 und werden statt ihrer zur Kathodenwand beschleunigt.
 Dort können sie jedoch kein Elektron ausschlagen, sondern werden nur zu Schwingungen angeregt.
 
-Die Zeit, die ein Ion bis zur Zylinderwand braucht, kann länger als die Totzeit sein, sodass der Effekt nicht von neuen 
+Die Zeit, die ein Ion bis zur Zylinderwand braucht, kann länger als die Totzeit sein, sodass der Effekt nicht von neuen
 Strahlungsevents unterschieden werden kann und die Messung stark verfälscht.
 Daher liegt ein besonderes Augenmerk auf der Vermeidung der sogenannten Nachentladungen.
 
 \subsection{Kenngrößen}
-Trägt man die Anzahl der gemessenen Events $N$ gegen die am Zählrohr angelegt Spannung auf, so erhält man die Charakteristik 
+Trägt man die Anzahl der gemessenen Events $N$ gegen die am Zählrohr angelegt Spannung auf, so erhält man die Charakteristik
 des Zählrohrs, beispielhaft in Abbildung \ref{fig:plateau}.
 \begin{figure}[H]
   \centering
@@ -54,8 +54,19 @@ Der lineare Teil der Chakateristik wird das Plateau genannt.
 Im wesentlichen wird die Steigung dieser bestimmt durch die Anzahl der Nachentladungen.
 Je flacher also das Plateau, je weniger die Anzahl der Events von der Spannung abhängen, desto besser ist das Zählrohr.
 
-Die Totzeit lässt sich durch die Zwei-Quellen-Methode bestimmen.
-Hierbei wird zunächst ein Strahler mit dem Zählrohr vermessen. Anschließend wird ein zusätzlich ein zweiter Strahler 
+Die Totzeit lässt sich durch die Zwei-Quellen-Methode und über ein Oszillographische Messung bestimmen.
+Für die Oszillographische Messung wird das Zählrohr an ein Oszilloskop angeschlossen.
+Es wird für eine hohe Strahlenintensität gesorgt.
+Auf dem Oszilloskop sollte ein Bild gemäß Abbildung\ref{fig:osz} erscheinen.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{content/Totzeit.png}
+  \caption{Tot- und Erholungszeit im Ladungs-Zeit-Diagramm.\cite{v703}}
+  \label{fig:osz}
+\end{figure}
+
+Bei bekannter Ablenkgeschwindigkeit kann dann aus dem Bild die Totzeit abgeschätzt werden.
+Bei der Zwei-Quellen-Methode wird zunächst ein Strahler mit dem Zählrohr vermessen. Anschließend wird ein zusätzlich ein zweiter Strahler
 auf das Zählrohr gerichtet und die Messung wiederholt.
 Zu guter letzt wird der erste Strahler entfernt und die Messung ein drittes mal durchgeführt.
 Aus simpler Überlegung folgt für die gemessene Rate $N_\text{mess}$, die eigentliche Rate $N$ und die Totzeit $T$ allgemein:

@@ -99,15 +99,17 @@ Die erhaltenen Messwerte sind in Tabelle\ref{tab:2strahl} aufgetragen.
     \bottomrule
   \end{tabular}
 \end{table}
-Damit lässt sich die Totzeit mit Gleichung auf
+Damit lässt sich die Totzeit mit Gleichung\eqref{eqn:totzeit} auf
 \begin{equation*}
-  T= \SI{2.2677\pm2.1456}{\micro\second}
+  T= \SI{2.2677\pm2145.6}{\micro\second}
 \end{equation*}
 abschätzen.
 Der Fehler berechnet sich hier nach Gauß mit:
-\begin{equation}
-  \symup{\Delta} T = \sqrt{(\frac{2N_1 N_2 - 2N_2(N_1 + N_2 - N_{1+2})}{2 N_1 N_2})^2\Delta N_{1}^2 +(\frac{2N_1 N_2 - 2N_1(N_1 + N_2 - N_{1+2})}{2 N_1 N_2})^2\Delta N_{2}^2 +(\frac{-1}{2 N_1 N_2})^2 \Delta N_{1+2}^2}
-\end{equation}
+\begin{align*}
+  \symup{\Delta} T ^2 = & (\frac{2N_1 N_2 - 2N_2(N_1 + N_2 - N_{1+2})}{2 N_1 N_2}^2)^2\Delta N_{1}^2 \\
+  & +(\frac{2N_1 N_2 - 2N_1(N_1 + N_2 - N_{1+2})}{2 N_1 N_2}^2)^2\Delta N_{2}^2 \\
+  & +(\frac{-1}{2 N_1 N_2})^2 \Delta N_{1+2}^2\\
+\end{align*}
 %
 \subsection{Bestimmung der mittleren Ladung pro Event}
 Die Ladung wird gemäß Formel \eqref{eqn:ladung} berechnet und ist gegen die entsprechende Spannung in
