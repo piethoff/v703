@@ -55,8 +55,10 @@ data = np.genfromtxt("content/messwerte.txt", unpack=True)
 t = 60
 e = 1.602e-19
 data[2] /= 1000
-data[1] = data[2]*t/(data[1]*e)
-data[1] /= 10e11
+data[2] = data[2]*t/(data[1])
+data[1] = data[2]/e
+data[1] /= 10e12
+data[2] /= 10e-7
 
 for i in range(data[0].size):
-    print("%3d &\t %2.2fe12" % (data[0][i], data[1][i]), sep = " &\t", end = "\\\\\n")
+    print("%3d \t& %2.2fe12 \t& %2.2fe-7" % (data[0][i], data[1][i], data[2][i]), sep = " &\t", end = "\\\\\n")
