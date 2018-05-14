@@ -57,6 +57,17 @@ e = 1.602e-19
 data[2] /= 1000
 data[2] = data[2]*t/(data[1])
 data[1] = data[2]/e
+
+plt.plot(data[0], data[1], label="Messwerte")
+plt.xlabel(r"$U/\si{\volt}$")
+plt.ylabel(r"$\Delta q/e$")
+plt.legend()
+plt.tight_layout()
+plt.savefig("build/ladung.pdf")
+plt.clf()
+
+
+
 data[1] /= 10e12
 data[2] /= 10e-7
 
