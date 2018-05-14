@@ -58,7 +58,7 @@ data[2] /= 1000
 data[2] = data[2]*t/(data[1])
 data[1] = data[2]/e
 
-plt.plot(data[0], data[1], label="Messwerte")
+plt.plot(data[0], data[1], ".", label="Messwerte")
 plt.xlabel(r"$U/\si{\volt}$")
 plt.ylabel(r"$\Delta q/e$")
 plt.legend()
