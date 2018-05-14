@@ -1,7 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Bestimmung der Charakteristik des Geiger-Müller-Zählrohrs}
-Die durch die Messung erhaltenen Messwerte sind in der Tabelle\ref{tab:mess} aufgetragen.
+Die durch die Messung erhaltenen Messwerte sind in der Tabelle \ref{tab:mess} aufgetragen.
 \begin{table}
     \centering
     \caption{Spannung, Aktivität des $\beta$-Strahlers und Zählerstrom.}
@@ -52,18 +52,18 @@ Die durch die Messung erhaltenen Messwerte sind in der Tabelle\ref{tab:mess} auf
         \bottomrule
     \end{tabular}
 \end{table}
-\noindent Die Aufgenommenen Zählraten sind Poissonverteilt, daher ergibt sich ihre Unsicherheit wie folgt:
+\noindent Die aufgenommenen Zählraten sind Poissonverteilt, daher ergibt sich ihre Unsicherheit wie folgt:
 \begin{equation}
   \sigma = \sqrt{N}
 \end{equation}
-Die Messwerte sind in Abbildung\ref{fig:plot} aufgetragen und es wurde eine lineare Ausgleichsgerade durch diese gezogen.
+Die Messwerte sind in Abbildung \ref{fig:plot} aufgetragen und es wird eine lineare Ausgleichsgerade durch diese gezogen.
 \begin{figure}[H]
   \centering
   \includegraphics{build/messung1.pdf}
   \caption{Charakeristik des Zählrohrs.}
   \label{fig:plot}
 \end{figure}
-\noindent  Die Ausgleichsgerade wurde mit Python/SciPy mit der Funktion $f(x)= Ax + B$ erstellt.
+\noindent  Die Ausgleichsgerade wird mit Python/SciPy mit der Funktion $f(x)= Ax + B$ erstellt.
 Damit erfolgt eine Steigung von
 \begin{equation}
   A = \SI{0.049 \pm 0.005}{\becquerel\per\volt}
@@ -73,11 +73,11 @@ und ein $y$-Achsenabchnitt von
   B =   \SI[per-mode=reciprocal]{224.6\pm 2.4}{\volt}        .
 \end{equation}
 \subsection{Oszillographische Messung der Totzeit}
-Mit der beschriebenen Messung konnte eine Totzeit von ungefähr
+Aus dem Bild des Oszilloskops konnte eine Totzeit von
 \begin{equation*}
   t_\text{tot} = \SI{70}{\micro \second}
 \end{equation*}
-und eine Erholungszeit von ungefähr
+und eine Erholungszeit von
 \begin{equation*}
     t_\text{erhol} = \SI{225}{\micro\second}
 \end{equation*}
